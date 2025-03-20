@@ -5,9 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Set;
 
 public class BasePage {
     protected WebDriver driver;
@@ -41,6 +43,10 @@ public class BasePage {
         wait.until(ExpectedConditions.alertIsPresent()).accept();
     }
 
+    public void dismissAlert() {
+        wait.until(ExpectedConditions.alertIsPresent()).dismiss();
+    }
+
     public String getAlertText() {
         return wait.until(ExpectedConditions.alertIsPresent()).getText();
     }
@@ -56,4 +62,27 @@ public class BasePage {
     public String getText(WebElement element) {
         return (String) jsExecutor.executeScript("return arguments[0].innerText;", waitForElement(element));
     }
+
+    public void switchToNewWindow(String originalWindowHandle) {
+        Set<String> windowHandles = driver.getWindowHandles();
+        for (String handle : windowHandles) {
+            if (!handle.equals(originalWindowHandle)) {
+                driver.switchTo().window(handle);
+                break;
+            }
+        }
+    }
+
+        public void selectDropdownOption(WebElement dropdown, String optionText) {
+            Select select = new Select(waitForElement(dropdown));
+            select.selectByVisibleText(optionText);
+        }
+
+
+        public String getSelectedDropdownOption(WebElement dropdown) {
+            Select select = new Select(waitForElement(dropdown));
+            return select.getFirstSelectedOption().getText();
+        }
+
 }
+

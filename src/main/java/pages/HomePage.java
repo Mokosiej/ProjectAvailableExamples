@@ -13,23 +13,42 @@ public class HomePage extends BasePage {
     @FindBy(linkText = "JavaScript Alerts")
     private WebElement jsAlertsLink;
 
-    @FindBy(linkText = "WYSIWYG Editor")
-    private WebElement iframeLink;
-
-    @FindBy(linkText = "Nested Frames")
-    private WebElement nestedFramesLink;
-
     public void goToJsAlerts() {
         click(jsAlertsLink);
     }
+
+
+    @FindBy(linkText = "WYSIWYG Editor")
+    private WebElement iframeLink;
 
     public void goToIframe() {
         click(iframeLink);
     }
 
+
+    @FindBy(linkText = "Nested Frames")
+    private WebElement nestedFramesLink;
+
     public void goToNestedFrames() {
         click(nestedFramesLink);
     }
+
+
+    @FindBy(linkText = "Multiple Windows") // Новая ссылка
+    private WebElement multipleWindowsLink;
+
+    public void goToMultipleWindows() {
+        click(multipleWindowsLink);
+    }
+
+
+    @FindBy(linkText = "Dropdown") // Новая ссылка
+    private WebElement dropdownLink;
+
+    public void goToDropdown() {
+        click(dropdownLink);
+    }
+
 }
 
 
