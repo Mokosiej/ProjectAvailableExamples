@@ -65,24 +65,18 @@ public class BasePage {
 
     public void switchToNewWindow(String originalWindowHandle) {
         Set<String> windowHandles = driver.getWindowHandles();
-        for (String handle : windowHandles) {
-            if (!handle.equals(originalWindowHandle)) {
-                driver.switchTo().window(handle);
-                break;
-            }
-        }
+        windowHandles.remove(originalWindowHandle);
+        String newWindowHandle = windowHandles.iterator().next();
+        driver.switchTo().window(newWindowHandle);
     }
 
-        public void selectDropdownOption(WebElement dropdown, String optionText) {
-            Select select = new Select(waitForElement(dropdown));
-            select.selectByVisibleText(optionText);
-        }
+    public void selectDropdownOption(WebElement dropdown, String optionText) {
+        Select select = new Select(waitForElement(dropdown));
+        select.selectByVisibleText(optionText);
+    }
 
-
-        public String getSelectedDropdownOption(WebElement dropdown) {
-            Select select = new Select(waitForElement(dropdown));
-            return select.getFirstSelectedOption().getText();
-        }
-
+    public String getSelectedDropdownOption(WebElement dropdown) {
+        Select select = new Select(waitForElement(dropdown));
+        return select.getFirstSelectedOption().getText();
+    }
 }
-

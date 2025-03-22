@@ -16,7 +16,7 @@ public class DropdownTest extends TestBase {
     public void initPages() {
         homePage = new HomePage(driver);
         dropdownPage = new DropdownPage(driver);
-        homePage.goToDropdown();
+        homePage.goToDropdown(); // Переход через клик по ссылке
     }
 
     @Test

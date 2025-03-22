@@ -13,15 +13,14 @@ public class IframePage extends BasePage {
     @FindBy(id = "mce_0_ifr")
     private WebElement iframe;
 
-    @FindBy(id = "tinymce")
-    private WebElement textArea;
-
-
-
     public void switchToIframe() {
         switchToFrame(iframe);
         wait.until(d -> !getText(textArea).isEmpty());
     }
+
+
+    @FindBy(id = "tinymce")
+    private WebElement textArea;
 
     public String getIframeText() {
         return getText(textArea);

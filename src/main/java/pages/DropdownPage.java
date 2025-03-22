@@ -12,10 +12,6 @@ public class DropdownPage extends BasePage {
         super(driver);
     }
 
-    public void openDropdownPage() {
-        open("https://the-internet.herokuapp.com/dropdown");
-    }
-
     public void selectOption(String optionText) {
         selectDropdownOption(dropdown, optionText);
     }

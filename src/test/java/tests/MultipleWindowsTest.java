@@ -1,7 +1,7 @@
 package tests;
 
 import pages.HomePage;
-import main.MultipleWindowsPage;
+import pages.MultipleWindowsPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,8 +22,9 @@ public class MultipleWindowsTest extends TestBase {
     @Test
     @DisplayName("Проверка открытия нового окна и текста в нем")
     public void testNewWindow() {
+        String originalWindowHandle = driver.getWindowHandle();
         multipleWindowsPage.clickToOpenNewWindow();
-        String newWindowText = multipleWindowsPage.getNewWindowText();
+        String newWindowText = multipleWindowsPage.getNewWindowText(originalWindowHandle);
         assertEquals("New Window", newWindowText, "Текст в новом окне неверный");
     }
 }

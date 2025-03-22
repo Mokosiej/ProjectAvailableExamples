@@ -34,7 +34,7 @@ public class HomePage extends BasePage {
     }
 
 
-    @FindBy(linkText = "Multiple Windows") // Новая ссылка
+    @FindBy(linkText = "Multiple Windows")
     private WebElement multipleWindowsLink;
 
     public void goToMultipleWindows() {
@@ -42,7 +42,7 @@ public class HomePage extends BasePage {
     }
 
 
-    @FindBy(linkText = "Dropdown") // Новая ссылка
+    @FindBy(linkText = "Dropdown")
     private WebElement dropdownLink;
 
     public void goToDropdown() {
@@ -50,7 +50,3 @@ public class HomePage extends BasePage {
     }
 
 }
-
-
-
-

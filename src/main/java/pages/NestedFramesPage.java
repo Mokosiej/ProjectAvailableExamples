@@ -28,8 +28,6 @@ public class NestedFramesPage extends BasePage {
     @FindBy(tagName = "body")
     private WebElement body;
 
-
-
     public String getLeftFrameText() {
         switchToFrame(topFrame);
         switchToFrame(leftFrame);
@@ -37,6 +35,7 @@ public class NestedFramesPage extends BasePage {
         switchToDefaultContent();
         return text;
     }
+
 
     public String getMiddleFrameText() {
         switchToFrame(topFrame);
@@ -60,4 +59,5 @@ public class NestedFramesPage extends BasePage {
         switchToDefaultContent();
         return text;
     }
+
 }
