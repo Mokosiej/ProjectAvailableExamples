@@ -16,11 +16,11 @@ public class DropdownTest extends TestBase {
     public void initPages() {
         homePage = new HomePage(driver);
         dropdownPage = new DropdownPage(driver);
-        homePage.goToDropdown(); // Переход через клик по ссылке
+        homePage.goToDropdown();
     }
 
     @Test
-    @DisplayName("Проверка выбора Option 1 в выпадающем списке")
+    @DisplayName("Checking that Option 1 is selected in the dropdown list")
     public void testSelectOption1() {
         dropdownPage.selectOption("Option 1");
         String selectedOption = dropdownPage.getSelectedOption();
@@ -28,7 +28,7 @@ public class DropdownTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка выбора Option 2 в выпадающем списке")
+    @DisplayName("Checking that Option 2 is selected in the dropdown list")
     public void testSelectOption2() {
         dropdownPage.selectOption("Option 2");
         String selectedOption = dropdownPage.getSelectedOption();

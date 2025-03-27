@@ -20,7 +20,7 @@ public class IframeTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка текста внутри iframe на странице")
+    @DisplayName("Checking text inside an iframe on a page")
     public void testIframe() {
         iframePage.switchToIframe();
         String iframeText = iframePage.getIframeText();

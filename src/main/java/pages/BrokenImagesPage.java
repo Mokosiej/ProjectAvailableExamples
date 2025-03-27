@@ -14,19 +14,14 @@ public class BrokenImagesPage extends BasePage {
         super(driver);
     }
 
-    public void openBrokenImagesPage() {
-        open("https://the-internet.herokuapp.com/broken_images");
-    }
-
-    public List<WebElement> getImages() {
-        return images;
-    }
-
-    public boolean isImageBroken(WebElement image) {
-        String src = image.getAttribute("src");
-        int statusCode = getHttpStatusCode(src);
-        // Изображение считается сломанным, если статус ≠ 200 или размеры нулевые
-        String naturalWidth = image.getAttribute("naturalWidth");
-        return statusCode != 200 || (naturalWidth != null && naturalWidth.equals("0"));
+    public int getBrokenImagesCount() {
+        int brokenCount = 0;
+        for (WebElement image : images) {
+            if (isImageBroken(image)) {
+                brokenCount++;
+                System.out.println("Сломанное изображение: " + image.getAttribute("src"));
+            }
+        }
+        return brokenCount;
     }
 }

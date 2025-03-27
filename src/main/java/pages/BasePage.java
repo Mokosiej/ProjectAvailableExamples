@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -90,7 +91,18 @@ public class BasePage {
             connection.connect();
             return connection.getResponseCode();
         } catch (IOException e) {
-            return -1; // Ошибка подключения
+            return -1;
+        }
+
+    }
+
+    public boolean isImageBroken(WebElement element) {
+        try {
+            element.isDisplayed();
+            return true;
+        } catch (NoSuchElementException ex) {
+            ex.getMessage();
+            return false;
         }
     }
 }

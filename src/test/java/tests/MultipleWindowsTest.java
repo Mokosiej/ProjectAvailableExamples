@@ -20,7 +20,7 @@ public class MultipleWindowsTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Проверка открытия нового окна и текста в нем")
+    @DisplayName("Checking whether a new window is opened and the text in it")
     public void testNewWindow() {
         String originalWindowHandle = driver.getWindowHandle();
         multipleWindowsPage.clickToOpenNewWindow();

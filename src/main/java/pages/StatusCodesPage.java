@@ -9,31 +9,23 @@ import java.util.List;
 import java.util.Map;
 
 public class StatusCodesPage extends BasePage {
-    @FindBy(css = ".example ul li a")
-    private List<WebElement> statusCodeLinks;
 
-    @FindBy(css = ".example p")
-    private WebElement descriptionText;
+    @FindBy(css = ".example li a")
+    private List<WebElement> statusCodeLinks;
 
     public StatusCodesPage(WebDriver driver) {
         super(driver);
     }
 
-    public void openStatusCodesPage() {
-        open("https://the-internet.herokuapp.com/status_codes");
-    }
-
-    public Map<String, String> getStatusCodeLinks() {
-        Map<String, String> links = new HashMap<>();
+    public Map<String, Integer> getStatusCodes() {
+        Map<String, Integer> statusCodes = new HashMap<>();
         for (WebElement link : statusCodeLinks) {
-            String code = link.getText();
+            String codeText = link.getText(); // Например, "200"
             String href = link.getAttribute("href");
-            links.put(code, href);
+            int statusCode = getHttpStatusCode(href);
+            statusCodes.put(codeText, statusCode);
+            System.out.println("Ссылка " + href + " вернула статус: " + statusCode);
         }
-        return links;
-    }
-
-    public String getDescriptionText() {
-        return getText(descriptionText);
+        return statusCodes;
     }
 }
