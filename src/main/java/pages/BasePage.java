@@ -8,6 +8,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.time.Duration;
 import java.util.Set;
 
@@ -78,5 +81,16 @@ public class BasePage {
     public String getSelectedDropdownOption(WebElement dropdown) {
         Select select = new Select(waitForElement(dropdown));
         return select.getFirstSelectedOption().getText();
+    }
+
+    public int getHttpStatusCode(String url) {
+        try {
+            HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+            connection.setRequestMethod("GET");
+            connection.connect();
+            return connection.getResponseCode();
+        } catch (IOException e) {
+            return -1; // Ошибка подключения
+        }
     }
 }

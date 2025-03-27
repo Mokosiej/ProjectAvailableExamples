@@ -49,4 +49,17 @@ public class HomePage extends BasePage {
         click(dropdownLink);
     }
 
+    @FindBy(linkText = "Broken Images") // Новая ссылка
+    private WebElement brokenImagesLink;
+
+    public void goToBrokenImages() {
+        click(brokenImagesLink);
+    }
+
+    @FindBy(linkText = "Status Codes") // Новая ссылка
+    private WebElement statusCodesLink;
+
+    public void goToStatusCodes() {
+        click(statusCodesLink);
+    }
 }
