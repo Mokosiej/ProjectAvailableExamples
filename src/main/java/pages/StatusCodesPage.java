@@ -10,12 +10,14 @@ import java.util.Map;
 
 public class StatusCodesPage extends BasePage {
 
-    @FindBy(css = ".example li a")
-    private List<WebElement> statusCodeLinks;
-
     public StatusCodesPage(WebDriver driver) {
         super(driver);
     }
+
+    @FindBy(css = ".example li a")
+    List<WebElement> statusCodeLinks;
+
+
 
     public Map<String, Integer> getStatusCodes() {
         Map<String, Integer> statusCodes = new HashMap<>();

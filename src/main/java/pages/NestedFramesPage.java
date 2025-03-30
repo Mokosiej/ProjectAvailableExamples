@@ -11,22 +11,22 @@ public class NestedFramesPage extends BasePage {
     }
 
     @FindBy(name = "frame-top")
-    private WebElement topFrame;
+    WebElement topFrame;
 
     @FindBy(name = "frame-left")
-    private WebElement leftFrame;
+    WebElement leftFrame;
 
     @FindBy(name = "frame-middle")
-    private WebElement middleFrame;
+    WebElement middleFrame;
 
     @FindBy(name = "frame-right")
-    private WebElement rightFrame;
+    WebElement rightFrame;
 
     @FindBy(name = "frame-bottom")
-    private WebElement bottomFrame;
+    WebElement bottomFrame;
 
     @FindBy(tagName = "body")
-    private WebElement body;
+    WebElement body;
 
     public String getLeftFrameText() {
         switchToFrame(topFrame);
@@ -35,7 +35,6 @@ public class NestedFramesPage extends BasePage {
         switchToDefaultContent();
         return text;
     }
-
 
     public String getMiddleFrameText() {
         switchToFrame(topFrame);

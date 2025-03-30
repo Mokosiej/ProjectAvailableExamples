@@ -7,12 +7,15 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class BrokenImagesPage extends BasePage {
-    @FindBy(css = ".example img")
-    private List<WebElement> images;
 
     public BrokenImagesPage(WebDriver driver) {
         super(driver);
     }
+
+    @FindBy(css = ".example img")
+    private List<WebElement> images;
+
+
 
     public int getBrokenImagesCount() {
         int brokenCount = 0;

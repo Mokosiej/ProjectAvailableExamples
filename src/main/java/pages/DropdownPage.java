@@ -5,12 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class DropdownPage extends BasePage {
-    @FindBy(id = "dropdown")
-    private WebElement dropdown;
 
     public DropdownPage(WebDriver driver) {
         super(driver);
     }
+
+    @FindBy(id = "dropdown")
+    private WebElement dropdown;
+
+
 
     public void selectOption(String optionText) {
         selectDropdownOption(dropdown, optionText);
