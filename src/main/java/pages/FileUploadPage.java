@@ -17,7 +17,7 @@ public class FileUploadPage extends BasePage {
     WebElement uploadButton;
 
     public void uploadFile(String filePath) {
-        uploadFile(fileInput, filePath);
+        fileInput.sendKeys(filePath);
         click(uploadButton);
     }
 
