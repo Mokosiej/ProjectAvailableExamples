@@ -1,0 +1,10 @@
+tests\JavaScriptAlertsTest.class
+tests\MultipleWindowsTest.class
+tests\StatusCodesTest.class
+tests\DropdownTest.class
+tests\BrokenImagesTest.class
+tests\FormAuthenticationTest.class
+tests\FileUploadTest.class
+tests\IframeTest.class
+tests\TestBase.class
+tests\NestedFramesTest.class

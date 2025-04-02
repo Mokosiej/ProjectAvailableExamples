@@ -1,0 +1,14 @@
+pages\BasePage.class
+pages\NestedFramesPage.class
+pages\HomePage.class
+pages\StatusCodesPage.class
+pages\FormAuthenticationPage.class
+models\UserProfile.class
+pages\DropdownPage.class
+pages\IframePage.class
+pages\FileUploadPage.class
+pages\ApplicationManager.class
+pages\MultipleWindowsPage.class
+models\UserProfile$UserProfileBuilder.class
+pages\JsAlertsPage.class
+pages\BrokenImagesPage.class
