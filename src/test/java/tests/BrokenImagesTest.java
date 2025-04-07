@@ -21,6 +21,7 @@ public class BrokenImagesTest extends TestBase {
 
     @Test
     @DisplayName("Check for broken images")
+    @Tag("smoke")
     public void testBrokenImages() {
         int brokenCount = brokenImagesPage.getBrokenImagesCount();
         assertTrue(brokenCount > 0, "На странице нет сломанных изображений, что неожиданно");
